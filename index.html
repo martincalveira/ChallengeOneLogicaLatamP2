@@ -8,18 +8,29 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    <div style="text-align:center; margin: 50px 0px;">
-      <h1 class="titulo">Juego del Ahorcado</h1>
-      <button class="btn" id="iniciar-juego">INICIAR JUEGO</button>
+    <div class="container">
+      <div class="cabecera">
+        <div class="logo-alura">
+          <img src="Vector1x.png" id="logo-alura" width="31" height="48">
+        </div>
+        <div class="mi-logo">
+          <img src="MiLogo.jpeg" id="mi-logo" width="48" height="48">
+        </div>
+      </div>
+      <div class="btns">
+        <div class="btn-iniciar-juego">
+          <button class="btn" id="iniciar-juego">INICIAR JUEGO</button>
+        </div>
+        <div class="btn-nueva-palabra">
+          <button class="btn" id="nueva-palabra">AGREGAR PALABRA</button> 
+        </div>
+      </div>
+      <div class="relleno">
+      </div>
     </div>
-    <div style="text-align:center">
-      <input class="text-input" type="text" id="input-nueva-palabra" placeholder="Escriba una nueva palabra">
-      <button class="btn" id="nueva-palabra">AGREGAR PALABRA</button> 
-    </div>
-    <div style="text-align:center;">
-      <canvas id="ahorcado" height="800px" width="1200px"></canvas>
-    </div>
+
     <script type="text/javascript" src="js/canvas.js"></script>
     <script type="text/javascript" src="js/ahorcado.js"></script>
+
   </body>
 </html>
