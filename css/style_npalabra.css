@@ -1,0 +1,149 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.cabecera {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.espacio-superior {
+  width: 120px;
+  height: 90px;
+
+  background: rgba(255, 255, 255, 0.24);
+  border-radius: 800px;
+
+  padding: 24px;
+  margin: 40px 0px;
+}
+
+.ingrese-palabra {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.txt-i-p {
+  flex: 1 1 auto;
+}
+
+.div-ingrese-palabra {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  /*flex: 1 1 auto;*/
+  padding: 0px;
+}
+
+.txt-ingrese-una-palabra {
+  text-align: center;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 150%;
+
+  /* Dark blue/dark-blue-300 */
+  color: #0A3871;
+  /*flex: 1 1 auto;*/
+}
+
+.div-cuadro-texto {
+  width: 100%;
+}
+
+.txt-cantidad-letras {
+  text-align: center;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 150%;
+
+  /* identical to box height, or 18px */
+
+  /* Gray/gray-400 */
+  color: #495057;
+
+  opacity: 0.8;
+  /*flex: 1 1 auto;*/
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#guardar-empezar-juego {
+  width: 210px;
+  height: 60px;
+  /*left: 24px;*/
+  /*top: 24px;*/
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+
+  /* White */
+  color: white;
+  background-color: darkblue;
+
+  /* Inside auto layout */
+  margin: 0px 8px;
+  border-radius: 0.5em;
+  border: 1px solid #0A3871;
+}
+
+#cancelar-nueva-palabra {
+  width: 200px;
+  height: 60px;
+  /*left: 24px;*/
+  /*top: 24px;*/
+
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  border-radius: 0.5em;
+
+  /* Dark blue/dark-blue-300 */
+  color: #0A3871;
+  border: 1px solid #0A3871;
+}
+
+.btn {
+
+}
+
+.text-input {
+  font-family: Inter;
+  border-radius: 0.5em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+  padding: 0.5em;
+  width: 100%;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  text-align: center;
+  font-size: 16px;
+  margin: 48px;
+  padding: 24px;
+}

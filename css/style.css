@@ -1,20 +1,30 @@
-
 .container {
-  display: flex;
-  flex-direction: column;
-  /*flex: 1;*/
-  /*height: 100%;*/
-  justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0px;
 }
 
 .cabecera {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px;
-  flex: 1 1 auto;
-  margin-bottom: 50px;
-  height: 250px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+#logo-alura {}
+
+#mi-logo {}
+
+.espacio-superior {
+	width: 120px;
+	height: 90px;
+
+	background: rgba(255, 255, 255, 0.24);
+	border-radius: 800px;
+
+	padding: 24px;
+	margin: 40px 0px;
 }
 
 .btns {
@@ -22,69 +32,59 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 250px;
 }
 
 
 .btn-iniciar-juego {
-  flex: 1 1 auto;
-}
-
-.btn-nueva-palabra {
-  flex: 1 1 auto;
+	margin: 20px;
 }
 
 #iniciar-juego {
-  width: 269px;
-  height: 66px;
-  left: 24px;
-  top: 24px;
+	width: 317px;
+	height: 114px;
+	left: 24px;
+	top: 24px;
 
-  font-family: Inter;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 22px;
+	align-items: center;
+	text-align: center;
 
-  /* White */
-  color: white;
-  background-color: darkblue;
+	/* White */
+	color: #FFFFFF;
 
-  /* Inside auto layout */
-  margin: 0px 8px;
-  border-radius: 0.5em;
+	background: #0A3871;
+
+	margin: 0px 8px;
+	border-radius: 0.5em;
+	border: 1px solid #0A3871;
+}
+
+.btn-nueva-palabra {
+	padding: 24px;
 }
 
 #nueva-palabra {
-  width: 232px;
-  height: 50px;
-  left: 24px;
-  top: 24px;
+	width: 280px;
+	height: 67px;
+	left: 24px;
+	top: 24px;
 
-  font-family: Inter;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: center;
-  border-radius: 0.5em;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: center;
 
-  /* Dark blue/dark-blue-300 */
-  color: #0A3871;
-}
+	/* Dark blue/dark-blue-300 */
+	color: #0A3871;
 
-.btn {
-
-}
-
-.text-input {
-  border-radius: 0.5em;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  display: block;
-  padding: 0.5em;
-  width: 30%;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
+	/*flex-grow: 1;*/
+	border: 1px solid #0A3871;
+	border-radius: 0.5em;
+	margin: 0px 8px;
 }
