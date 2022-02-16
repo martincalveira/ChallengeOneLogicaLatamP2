@@ -62,6 +62,7 @@ function ingresarLetraAdivinada(letraCorrecta){
         }
         if (palabraAdivinar == letrasAdivinadas.join("")){
             console.log("Ganaste!!!");
+            letrasAdivinadas = guionesDibujar();
         }
     }
 };
@@ -106,7 +107,7 @@ function construirTrLetrasCorrectas(){
         if (letrasAdivinadas[i] != GUION){
             trLetrasAdivinadas.appendChild(construirTd(letrasAdivinadas[i]));
         } else {
-            trLetrasAdivinadas.appendChild(construirTd(" "));
+            trLetrasAdivinadas.appendChild(construirTd("_"));
         };
     };
 };
@@ -114,10 +115,14 @@ function construirTrLetrasCorrectas(){
 function presentarLetrasCorrectas(){
     var trLetrasAdivinadas = document.getElementById("letras-correctas");
     var cadaTdLetrasAdivinadas = trLetrasAdivinadas.getElementsByTagName("td");
-    var trGuiones = document.querySelector("#guiones");
-    console.log(cadaTdLetrasAdivinadas[0]);
-    console.log(trLetrasAdivinadas);
-
+    //console.log(cadaTdLetrasAdivinadas[0]);
+    for (let i = 0; i < letrasAdivinadas.length; i++){
+        if (letrasAdivinadas[i] != GUION){
+            cadaTdLetrasAdivinadas[i].innerText = letrasAdivinadas[i];
+        } else {
+            cadaTdLetrasAdivinadas[i].innerText = "_";
+        };
+    }
 };
 
 function verificarLetra(letraAVerificar) {
