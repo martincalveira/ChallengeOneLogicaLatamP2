@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style_npalabra.css">
 	</head>
 	<body>
+
 		<div class="container">
       <div class="cabecera">
         <div class="logo-alura">
@@ -35,27 +36,17 @@
 
       	<div class="txt-i-p"></div>
       </div>
-
-
-
-
-
-
-
-
       <div class="btns">
         <div class="btn-iniciar-juego">
-          <button class="btn" id="guardar-empezar-juego">Guardar y empezar</button>
+          <button onclick="btnAgregarPalabra()" class="btn" id="guardar-empezar-juego">Guardar y empezar</button>
         </div>
         <div class="btn-nueva-palabra-cancelar">
-          <button class="btn" id="cancelar-nueva-palabra">Cancelar</button> 
+          <button onclick="location.href = 'index.html';" class="btn" id="cancelar-nueva-palabra">Cancelar</button> 
         </div>
       </div>
       <div class="relleno">
       </div>
     </div>
-
-    <script type="text/javascript" src="js/canvas.js"></script>
-    <script type="text/javascript" src="js/ahorcado.js"></script>
+    <script type="text/javascript" src="js/palabra_secreta.js" defer></script>
 	</body>
 </html>
