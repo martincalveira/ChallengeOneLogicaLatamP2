@@ -1,5 +1,6 @@
 window.onload = function(){
     agregarPalabraNueva(localStorage.getItem("palabraNueva"));
+    p0GLimpiarPizarra();
     inicioJuego();
 };
 
@@ -18,7 +19,8 @@ var bDPalabras = [ "archivo", "arrastrar", "beta", "biblioteca", "binario", "bug
 "sistema", "soporte", "tarea", "tester", "usuario", "utilidades", "videojuegos"
 ];
 
-
+var debug = false;
+var debugAh = false;
 var jugando = false;
 
 var intentos = 0;
@@ -26,6 +28,44 @@ var palabraAdivinar = "";
 
 var letrasAdivinadas = "";
 var letrasErradas = [];
+
+function gDibujarAhorcado(paso){
+    if (debugAh){
+        console.log("Dibujo Ahorcado: " + paso);
+    };
+    switch (paso) {
+        case 8:
+            p1GColumnaAh();
+            break;
+        case 7:
+            p2GTiranteAh();
+            break;
+        case 6:
+            p3GCuerdaAh();
+            break;
+        case 5:
+            p4GCabeza();
+            break;
+        case 4:
+            p5GCuerpoAh();
+            break;
+        case 3:
+            p6GPiernaDerAh();
+            break;
+        case 2:
+            p7GPiernaIzqAh();
+            break;
+        case 1:
+            p8GBrazoDerAh();
+            break;
+        case 0:
+            p9GBrazoIzqAh();
+            break;
+        default:
+            p0GLimpiarPizarra();
+            break;
+    };
+};
 
 function guiConstruirTd(dato){
     var td = document.createElement("td");
@@ -81,8 +121,10 @@ function palabraSecreta(){
     letrasAdivinadas = "";
     letrasErradas = [];
     // Debug
-    console.log("Palabra :" + palabraAdivinar);
-    console.log("Intentos: " + intentos);
+    if (debug){ 
+        console.log("Palabra :" + palabraAdivinar);
+        console.log("Intentos: " + intentos);
+    };
 };
 
 function ingresarLetraAdivinada(letraCorrecta){
@@ -91,6 +133,7 @@ function ingresarLetraAdivinada(letraCorrecta){
             letrasAdivinadas[idx] = letraCorrecta;
         }
         if (palabraAdivinar == letrasAdivinadas.join("")){
+            pGGanaste();
             console.log("Ganaste!!!");
             jugando = false;
         }
@@ -103,12 +146,13 @@ function ingresarLetraIncorrecta(letraIncorrecta){
         letrasErradas.push(letraIncorrecta);
         guiAgregarLetraIncorrecta(letraIncorrecta);
         intentos -= 1;
+        gDibujarAhorcado(intentos);
         if (intentos == 0){
+            pGPerdiste();
             console.log("Perdiste!!!");
             jugando = false;
         }
     } else {
-        console.log("Letra Errada Ya Ingresada");
         snd.play();
     }
 };
@@ -117,7 +161,7 @@ function procesarLetra(letra){
     var snd = new Audio(BIP);
     regex = /[A-Za-z]/
     if (regex.test(letra)){
-        return letra.toUpperCase();
+        return letra[0].toUpperCase();
     } else {
         snd.play();
     };
@@ -127,14 +171,16 @@ function verificarLetra(letraAVerificar) {
     if (palabraAdivinar.includes(letraAVerificar)){
         ingresarLetraAdivinada(letraAVerificar);
         guiPresentarLetrasCorrectas();
-        console.log("Letra ingresada como Adivinada: " + letrasAdivinadas);
+        if (debug){
+            console.log("Letra ingresada como Adivinada: " + letrasAdivinadas);
+        };
 
     } else if (letraAVerificar != undefined){
         ingresarLetraIncorrecta(letraAVerificar);
-        console.log("Letra ingresada como Erradas: " + letrasErradas);
-        console.log("Intentos: " + intentos);
-    } else {
-        console.log("No se hace nada")
+        if (debug){
+            console.log("Letra ingresada como Erradas: " + letrasErradas);
+            console.log("Intentos: " + intentos);
+        };
     };
 };
 
@@ -162,6 +208,7 @@ function guiBorrarTdLetrasIncorrectas(){
 function nuevoJuego(){
     console.log("Nuevo Juego");
     jugando = true;
+    p0GLimpiarPizarra();
     guiBorrarTdLetrasCorrectas();
     guiBorrarTdLetrasIncorrectas()
     palabraSecreta();
@@ -170,7 +217,7 @@ function nuevoJuego(){
 };
 
 document.addEventListener('keydown', function(event) {
-    console.log(event.key);
+    //console.log(event.key);
     if (jugando) {
         verificarLetra(procesarLetra(event.key));
     };
