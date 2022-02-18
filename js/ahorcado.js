@@ -1,5 +1,6 @@
 window.onload = function(){
     agregarPalabraNueva(localStorage.getItem("palabraNueva"));
+    detectarFirefox();
     p0GLimpiarPizarra();
     inicioJuego();
 };
@@ -28,6 +29,12 @@ var palabraAdivinar = "";
 
 var letrasAdivinadas = "";
 var letrasErradas = [];
+
+function detectarFirefox(){
+    if (navigator.userAgent.match(/firefox|fxios/i)){
+        document.getElementById("letras-correctas").style.textDecoration = "none";
+    };   
+};
 
 function gDibujarAhorcado(paso){
     if (debugAh){

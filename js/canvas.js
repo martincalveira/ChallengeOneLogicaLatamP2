@@ -9,16 +9,16 @@ pincel.font = "48px Inter";
 
 function pGGanaste(){
 	pincel.fillStyle = "White";
-	pincel.fillRect(140, 140, 220, 55);
+	pincel.fillRect(130, 140, 220, 55);
 	pincel.fillStyle = "Green";
-	pincel.fillText("¡Ganaste!", 150, 180);
+	pincel.fillText("¡Ganaste!", 140, 180);
 };
 
 function pGPerdiste(){
 	pincel.fillStyle = "White";
-	pincel.fillRect(140, 140, 220, 55);
+	pincel.fillRect(130, 140, 220, 55);
 	pincel.fillStyle = "Red";
-	pincel.fillText("¡Perdiste!", 150, 180);
+	pincel.fillText("¡Perdiste!", 140, 180);
 };
 
 function p0GLimpiarPizarra(){
